@@ -6,7 +6,7 @@ This is the extension version of Codeforces Dark Theme. If you want the userscri
 
 Screenshot
 
-![screenshot](extension/imgs/screenshot.png)
+![screenshot](assets/screenshot.png)
 
 Quick install (developer mode)
 
@@ -35,3 +35,14 @@ Notes
 
 - The `extension/` folder contains the unpacked extension files and the third-party styles packaged locally.
 - If you redistribute this extension, please respect and include the third-party licenses (see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)).
+
+Store listing copy
+
+- Short description: Dark theme for Codeforces with bundled syntax highlighting styles and a simple on/off popup.
+- Long description: Codeforces Dark Theme is a lightweight browser extension that applies a dark, high-contrast reading and coding experience to Codeforces. It ships all runtime assets locally, including theme CSS and editor styling, and lets you enable or disable the theme from the popup. The extension is designed to be minimal, fast, and easy to install in developer mode.
+
+Privacy
+
+- This extension only stores a single preference locally in `chrome.storage.local` or `browser.storage.local` to remember whether the theme is enabled.
+- It does not collect, transmit, or sell personal data.
+- It does not use remote analytics, tracking, or advertising scripts.

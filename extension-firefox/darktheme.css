@@ -1,0 +1,471 @@
+:root {
+    --backgroundGreyColor: #1e1e1e;
+    --tableGreyRow: #2e2e2e;
+    --whiteTextColor: rgb(200, 200, 200);
+    --inputBoxBackgroundBorderColor: #383838;
+    --redColorJustPassesA11Y: hsl(0, 100%, 64%);
+    --genericLinkBlueColor: #21b0fd;
+    --genericLinkVisitedBlueColor: #8ab1ff;
+}
+
+body:not(.wysiwyg),
+.roundbox,
+.bottom-links,
+.datatable td:not(.dark),
+.datatable td:not(.dark) div.dark,
+.datatable th,
+.datatable > div.dark,
+#facebox .content,
+.talk-content div[id^='history-text-content'] {
+    background: var(--backgroundGreyColor) !important;
+    background-color: var(--backgroundGreyColor) !important;
+}
+
+.spoiler-content,
+.roundbox.highlight-blue {
+    background-color: hsl(240, 15%, 35%) !important;
+}
+
+.topic .content {
+    border-left-color: #999 !important;
+}
+
+.comment-table {
+    border-color: grey !important;
+}
+
+div.ttypography .bordertable thead th:not(:last-child) {
+    border-right-color: #000;
+}
+
+.search,
+.ac_input,
+input[name$='Difficulty'],
+input[type='text'],
+#title,
+#comment {
+    background-color: var(--inputBoxBackgroundBorderColor) !important;
+    border-color: var(--inputBoxBackgroundBorderColor) !important;
+    color: var(--whiteTextColor) !important;
+}
+
+td.dark,
+td.dark div.dark,
+.ttypography tbody tr:hover td,
+.status-frame-datatable tr td.dark {
+    background-color: var(--tableGreyRow) !important;
+}
+
+div.ttypography tbody tr:hover th {
+    color: black !important;
+    border-color: black !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+#header > div:first-child img,
+._logo_div img,
+.sidebox img[alt='Logo'] {
+    background-color: white !important;
+}
+
+img[src^='//st.codeforces.com']:not(.ajax-loading-gif),
+img[src^='//sta.codeforces.com']:not(.ajax-loading-gif),
+img[src$='/lightning-16x16.png'],
+img[src$='/ok-16x16.png'] {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+pre {
+    background-color: #333 !important;
+}
+
+body > pre,
+div.ttypography pre {
+    color: var(--whiteTextColor) !important;
+}
+
+.comment-table.highlight-blue,
+.comment-table.highlight,
+.standings tr.highlighted-row td,
+table tr.highlighted-row td,
+.highlight-blue,
+.lang-chooser div[style^='background-color: #EAF4FF;'] {
+    background-color: #13203a !important;
+}
+
+.standings .cell-accepted,
+.standings .cell-accepted-locked {
+    color: rgb(78, 209, 253) !important;
+}
+
+.standings .cell-challenged {
+    color: var(--redColorJustPassesA11Y) !important;
+}
+
+.standings .cell-passed-system-test {
+    color: #00c700 !important;
+}
+
+blockquote {
+    color: #a8a8a8 !important;
+}
+
+div.alert-success {
+    color: #0f5711 !important;
+    background-color: #87df63 !important;
+}
+
+div.ttypography .tt,
+.search-help code {
+    color: #fff !important;
+    border-color: #333 !important;
+    background-color: #333 !important;
+}
+
+.sidebar-menu ul li {
+    border: none !important;
+}
+
+.sidebar-menu ul li:hover {
+    border: 1px solid #2e2e2e !important;
+    background-color: #2e2e2e !important;
+}
+
+.problems tr.rejected-problem td.act {
+    background-color: #ffabab !important;
+}
+
+.problems tr.accepted-problem td.act {
+    background-color: #b5fd95 !important;
+}
+.problems tr.rejected-problem td.id {
+    border-left-color: #ffabab !important;
+}
+
+.problems tr.accepted-problem td.id {
+    border-left-color: #b5fd95 !important;
+}
+
+div.ttypography .MathJax {
+    -webkit-filter: invert(1) !important;
+    filter: invert(1) !important;
+}
+
+div.ttypography a:hover,
+div.ttypography a:focus {
+    background-color: #020466 !important;
+}
+
+table tbody tr th a img[alt^='Sort'] {
+    filter: invert(1);
+}
+
+.datatable td.state[style^='background-color: rgb(221, 238, 255);'] {
+    background-color: #4a4a4a !important;
+}
+
+.datatable td.state[style^='background-color: rgb(212, 237, 201);'] {
+    background-color: #005a07 !important;
+}
+
+.miu-complete,
+.miu-comment,
+input[name^='tag'].ac_input,
+.send-talk-form table .wysiwyg {
+    background-color: var(--inputBoxBackgroundBorderColor) !important;
+    border-color: var(--inputBoxBackgroundBorderColor) !important;
+}
+
+input[type='submit'],
+input[type='button'],
+input[type='file'] {
+    color: var(--whiteTextColor) !important;
+    background: #4f4f4f !important;
+    border-color: #4f4f4f !important;
+}
+
+.miu-complete,
+.miu-comment,
+.send-talk-form table .wysiwyg {
+    background: #fff !important;
+    filter: invert(90%) hue-rotate(180deg);
+}
+
+.miu-comment .markItUp .markItUpButton8 a,
+.miu-complete .markItUp .markItUpButton12 a {
+    filter: invert(90%) hue-rotate(180deg);
+}
+
+textarea[name='input'],
+textarea[name='output'],
+#sourceCodeTextarea {
+    background-color: #272822;
+    color: white;
+}
+
+.delete-resource-link,
+.close {
+    filter: invert(1);
+    background-color: #e0e0e0 !important;
+}
+
+.close_image {
+    opacity: 0.7 !important;
+}
+
+.problem-statement .test-example-line-even {
+    background-color: #444 !important;
+}
+
+span.error {
+    color: var(--redColorJustPassesA11Y) !important;
+}
+
+.roundbox.highlight-blue .caption.titled {
+    color: #ddddee !important;
+}
+
+.roundbox.highlight-blue .caption.titled + div {
+    color: rgb(230, 230, 230) !important;
+}
+
+.second-level-menu ul li a:link,
+.second-level-menu ul li a:visited,
+span.verdict-unsuccessful-challenge,
+span.cell-rejected,
+a:not([href]):not(.rated-user),
+a:link:not(.rated-user) {
+    color: var(--genericLinkBlueColor) !important;
+}
+
+a:visited:not(.rated-user) {
+    color: var(--genericLinkVisitedBlueColor) !important;
+}
+
+.info,
+.ttypography,
+.ttypography table,
+.ttypography h1,
+.ttypography h2,
+.ttypography h3,
+.ttypography h4,
+.ttypography h5,
+.ttypography h6,
+.right-meta,
+.tickLabel,
+.personal-sidebar,
+.roundbox,
+#footer,
+.pagination,
+#locationSelect,
+#pageContent,
+#pageContent > div:not(:first-child),
+body.notfoundpage h3,
+#facebox .content,
+.lang-chooser,
+.page-index.active,
+span#u_0_4,
+.menu-list-container ul li a,
+#header h3,
+body > p,
+body > ul {
+    color: var(--whiteTextColor) !important;
+}
+
+ul.second-level-menu-list li:hover a:hover {
+    color: #014486 !important;
+}
+
+ul.second-level-menu-list li:hover a:link {
+    color: #014486 !important;
+}
+
+li.selectedLava a:link {
+    color: #014486 !important;
+}
+
+ul.second-level-menu-list:hover
+    li:hover:not(.selectedLava)
+    + .selectedLava
+    a:link {
+    color: var(--genericLinkBlueColor) !important;
+}
+
+a:link.notice {
+    color: #bababa !important;
+}
+
+.tex-formula {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+div ul.menu-list li a:link,
+div ul.menu-list li a:visited {
+    color: white !important;
+}
+
+.verdict-rejected {
+    color: lightblue !important;
+}
+
+a.red-link[href^='/contestRegistration'] {
+    background-color: #9a0000 !important;
+    color: var(--whiteTextColor) !important;
+}
+
+.topic .content center a {
+    color: var(--whiteTextColor) !important;
+}
+
+.topic .title p {
+    color: rgb(94, 146, 255) !important;
+}
+
+.caption.titled,
+.contest-state-phase {
+    color: #91a5cd !important;
+}
+
+.input pre,
+.output pre,
+pre.input,
+pre.output,
+pre.answer,
+pre.checker,
+pre.diagnostics {
+    color: white !important;
+}
+
+span.contest-state-regular,
+.countdown {
+    color: #bababa !important;
+}
+
+.datatable,
+.status-frame-datatable {
+    color: var(--whiteTextColor) !important;
+    border-radius: 5px;
+    background-color: #585858 !important;
+}
+
+.datatable td.state[style^='back'] .notice {
+    color: #cccccc !important;
+}
+
+.personal-sidebar div ul.propertyLinks li:nth-child(2) span[style*='green'] {
+    color: #00c700 !important;
+}
+
+.personal-sidebar
+    div
+    ul.propertyLinks
+    li:nth-child(2)
+    span:not([style*='green']) {
+    color: #a8a8a8 !important;
+}
+
+.fix-tag-topic-contrast span a {
+    color: white !important;
+}
+
+#vote-list-filterDifficultyLowerBorder li a.vote-item:hover,
+#vote-list-filterDifficultyLowerBorder {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+.roundbox {
+    border-radius: 5px;
+}
+
+.ttypography h5 {
+    font-weight: bold;
+}
+
+.roundbox-lt,
+.roundbox-lb,
+.roundbox-rt,
+.roundbox-rb,
+.datatable .lt,
+.datatable .lb,
+.datatable .rt,
+.datatable .rb,
+.datatable .ilt,
+.datatable .irt {
+    display: none !important;
+}
+
+.bottom-links {
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+.second-level-menu-list li {
+    border-radius: 5px !important;
+}
+
+td.dark span[style^='color: #0000bb;'] {
+    color: #4e9fef !important;
+}
+
+.datatable td.state a[href$='standings'] {
+    color: #8cc3f9 !important;
+}
+
+div.setting-name {
+    color: #6c8bcc !important;
+}
+
+span.user-legendary::first-letter,
+a.user-legendary::first-letter,
+span.user-admin,
+a.user-admin,
+span.user-black,
+a.user-black {
+    color: #fff !important;
+}
+
+tr.user-blue td,
+span.user-blue,
+a.user-blue {
+    color: #757dff !important;
+}
+
+tr.user-red td,
+span.user-red,
+a.user-red,
+span.user-legendary,
+a.user-legendary {
+    color: var(--redColorJustPassesA11Y) !important;
+}
+
+tr.user-cyan td,
+span.user-cyan,
+a.user-cyan {
+    color: #01bdb2 !important;
+}
+
+tr.user-violet td,
+span.user-violet,
+a.user-violet {
+    color: #ce8aff !important;
+}
+
+tr.user-gray td,
+span.user-gray,
+a.user-gray {
+    color: #8c8c8c !important;
+}
+
+div.diffHtmlTarget pre.prettyprint del[style^='background:#ff8080'] {
+    background: #7b1313 !important;
+}
+
+div.diffHtmlTarget pre.prettyprint ins[style^='background:#80ff80'] {
+    background: #004600 !important;
+}
+div.diffHtmlTarget pre.prettyprint ins[style^='background:#80ff80'] .lit {
+    background: #ff9d9d !important;
+}
