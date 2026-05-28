@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Codeforces Dark Theme",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Dark theme for Codeforces (ports the userscript into a browser extension)",
     "browser_specific_settings": {
         "gecko": {
