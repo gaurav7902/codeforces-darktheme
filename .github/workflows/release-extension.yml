@@ -1,80 +1,80 @@
 name: Build and Release Extension
 
 on:
-  push:
-    branches:
-      - master
-      - main
-    paths:
-      - "extension/**"
-      - "generate-extension-zip.sh"
-  workflow_dispatch:
+    push:
+        branches:
+            - master
+            - main
+        paths:
+            - 'extension/**'
+            - 'generate-extension-zip.sh'
+    workflow_dispatch:
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
+    release:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
 
-      - name: Read extension version
-        id: version
-        run: echo "version=$(jq -r '.version' extension/manifest.json)" >> "$GITHUB_OUTPUT"
+            - name: Read extension version
+              id: version
+              run: echo "version=$(jq -r '.version' extension/manifest.json)" >> "$GITHUB_OUTPUT"
 
-      - name: Build extension zip
-        run: bash generate-extension-zip.sh
+            - name: Build extension zip
+              run: bash generate-extension-zip.sh
 
-      - name: Commit updated zip to repo
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add codeforces-darktheme-extension.zip
-          if git diff --cached --quiet; then
-            echo "No zip changes to commit."
-            exit 0
-          fi
-          git commit -m "Update extension zip [skip ci]"
-          git push
+            - name: Commit updated zip to repo
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git add codeforces-darktheme-extension.zip
+                  if git diff --cached --quiet; then
+                    echo "No zip changes to commit."
+                    exit 0
+                  fi
+                  git commit -m "Update extension zip [skip ci]"
+                  git push
 
-      - name: Capture commit SHA
-        id: sha
-        run: echo "short_sha=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+            - name: Capture commit SHA
+              id: sha
+              run: echo "short_sha=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
 
-      - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ steps.version.outputs.version }}-${{ steps.sha.outputs.short_sha }}
-          name: Codeforces Dark Theme v${{ steps.version.outputs.version }}-${{ steps.sha.outputs.short_sha }}
-          generate_release_notes: true
-          files: codeforces-darktheme-extension.zip
+            - name: Create GitHub release
+              uses: softprops/action-gh-release@v2
+              with:
+                  tag_name: v${{ steps.version.outputs.version }}-${{ steps.sha.outputs.short_sha }}
+                  name: Codeforces Dark Theme v${{ steps.version.outputs.version }}-${{ steps.sha.outputs.short_sha }}
+                  generate_release_notes: true
+                  files: codeforces-darktheme-extension.zip
 
-      - name: Update README release links
-        run: |
-          set -euo pipefail
-          TAG="v${{ steps.version.outputs.version }}-${{ steps.sha.outputs.short_sha }}"
-          REPO="${GITHUB_REPOSITORY}"
+            - name: Update README release links
+              run: |
+                  set -euo pipefail
+                  TAG="v${{ steps.version.outputs.version }}-${{ steps.sha.outputs.short_sha }}"
+                  REPO="${GITHUB_REPOSITORY}"
 
-          # Replace any existing release tag links
-          # sed -E -i "s#https://github.com/${REPO}/releases/tag/v[^")' ]+#https://github.com/${REPO}/releases/tag/${TAG}#g" README.md || true
+                  # Replace any existing release tag links
+                  # sed -E -i "s#https://github.com/${REPO}/releases/tag/v[^")' ]+#https://github.com/${REPO}/releases/tag/${TAG}#g" README.md || true
 
-          # Replace any existing release download links for the zip
-          # sed -E -i "s#https://github.com/${REPO}/releases/download/v[^")' ]+/codeforces-darktheme-extension.zip#https://github.com/${REPO}/releases/download/${TAG}/codeforces-darktheme-extension.zip#g" README.md || true
+                  # Replace any existing release download links for the zip
+                  # sed -E -i "s#https://github.com/${REPO}/releases/download/v[^")' ]+/codeforces-darktheme-extension.zip#https://github.com/${REPO}/releases/download/${TAG}/codeforces-darktheme-extension.zip#g" README.md || true
 
-          # Replace plain text occurrences like 'Release v1.0.0' -> 'Release <TAG>'
-          # sed -E -i "s/Release v[0-9A-Za-z._-]+/Release ${TAG}/g" README.md || true
+                  # Replace plain text occurrences like 'Release v1.0.0' -> 'Release <TAG>'
+                  # sed -E -i "s/Release v[0-9A-Za-z._-]+/Release ${TAG}/g" README.md || true
 
-          sed -E -i "s#https://github.com/${REPO}/releases/tag/[^[:space:]>\"')]+#https://github.com/${REPO}/releases/tag/${TAG}#g" README.md
+                  sed -E -i "s#https://github.com/${REPO}/releases/tag/[^[:space:]>\"')]+#https://github.com/${REPO}/releases/tag/${TAG}#g" README.md
 
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          if git diff --cached --quiet; then
-            echo "No README changes to commit."
-            exit 0
-          fi
-          git commit -m "Update README release links to ${TAG} [skip ci]"
-          git push
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git add README.md
+                  if git diff --cached --quiet; then
+                    echo "No README changes to commit."
+                    exit 0
+                  fi
+                  git commit -m "Update README release links to ${TAG} [skip ci]"
+                  git push
