@@ -67,7 +67,7 @@ jobs:
           # Replace plain text occurrences like 'Release v1.0.0' -> 'Release <TAG>'
           # sed -E -i "s/Release v[0-9A-Za-z._-]+/Release ${TAG}/g" README.md || true
 
-          sed -E "s#https://github.com/${REPO}/releases/tag/[^[:space:]>\"')]+#https://github.com/${REPO}/releases/tag/${TAG}#g" README.md
+          sed -E -i "s#https://github.com/${REPO}/releases/tag/[^[:space:]>\"')]+#https://github.com/${REPO}/releases/tag/${TAG}#g" README.md
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
