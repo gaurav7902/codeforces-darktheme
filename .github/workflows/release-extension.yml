@@ -59,13 +59,15 @@ jobs:
           REPO="${GITHUB_REPOSITORY}"
 
           # Replace any existing release tag links
-          sed -E -i "s#https://github.com/${REPO}/releases/tag/v[^")' ]+#https://github.com/${REPO}/releases/tag/${TAG}#g" README.md || true
+          # sed -E -i "s#https://github.com/${REPO}/releases/tag/v[^")' ]+#https://github.com/${REPO}/releases/tag/${TAG}#g" README.md || true
 
           # Replace any existing release download links for the zip
-          sed -E -i "s#https://github.com/${REPO}/releases/download/v[^")' ]+/codeforces-darktheme-extension.zip#https://github.com/${REPO}/releases/download/${TAG}/codeforces-darktheme-extension.zip#g" README.md || true
+          # sed -E -i "s#https://github.com/${REPO}/releases/download/v[^")' ]+/codeforces-darktheme-extension.zip#https://github.com/${REPO}/releases/download/${TAG}/codeforces-darktheme-extension.zip#g" README.md || true
 
           # Replace plain text occurrences like 'Release v1.0.0' -> 'Release <TAG>'
-          sed -E -i "s/Release v[0-9A-Za-z._-]+/Release ${TAG}/g" README.md || true
+          # sed -E -i "s/Release v[0-9A-Za-z._-]+/Release ${TAG}/g" README.md || true
+
+          sed -E "s#https://github.com/${REPO}/releases/tag/[^[:space:]>\"')]+#https://github.com/${REPO}/releases/tag/${TAG}#g" README.md
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
