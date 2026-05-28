@@ -3,6 +3,7 @@ name: Build and Release Extension
 on:
   push:
     branches:
+      - master
       - main
     paths:
       - "extension/**"
@@ -26,6 +27,18 @@ jobs:
 
       - name: Build extension zip
         run: bash generate-extension-zip.sh
+
+      - name: Commit updated zip to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add codeforces-darktheme-extension.zip
+          if git diff --cached --quiet; then
+            echo "No zip changes to commit."
+            exit 0
+          fi
+          git commit -m "Update extension zip [skip ci]"
+          git push
 
       - name: Capture commit SHA
         id: sha
