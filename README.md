@@ -16,18 +16,18 @@ This is the extension version of Codeforces Dark Theme. If you want the userscri
 
 ### Chrome / Edge / Brave
 
-1. Download `codeforces-darktheme-chrome-extension.zip` from releases:  
-   [Release v1.0.0](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.0) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-chrome-extension.zip)
+1. Download `codeforces-darktheme-extension.zip` from releases:  
+   [Release v1.0.0](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.0) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
 2. Unzip the file to a local folder.
-3. Open Chrome and go to `chrome://extensions/`.
+3. Open your Chromium-based browser (Chrome, Edge, Brave) and go to `chrome://extensions/`, or `edge://extensions/`, or `brave://extensions/` as appropriate.
 4. Enable "Developer mode" (top right).
 5. Click "Load unpacked" and select `manifest.json` from the unzipped folder.
 6. Open https://codeforces.com, toggle the extension, and confirm the dark theme is applied.
 
 ### Firefox (temporary)
 
-1. Download `codeforces-darktheme-firefox-extension.zip` from releases:  
-   [Release v1.0.0](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.0) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-firefox-extension.zip)
+1. Download `codeforces-darktheme-extension.zip` from releases:  
+   [Release v1.0.0](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.0) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
 2. Unzip the file to a local folder.
 3. Open `about:debugging#/runtime/this-firefox` in Firefox.
 4. Click "Load Temporary Add-on..." and pick `manifest.json` from the unzipped folder.
@@ -47,7 +47,7 @@ Contributions are welcome! Feel free to fork, improve, and submit pull requests.
 
 ## Notes
 
-- The `extension-firefox/` and `extension-chrome/` folders contain the unpacked extension files and the third-party styles packaged locally.
+- The `extension` folder contain the unpacked extension files and the third-party styles packaged locally.
 - If you redistribute this extension, please respect and include the third-party licenses (see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)).
 
 ## Store listing copy
@@ -57,21 +57,24 @@ Contributions are welcome! Feel free to fork, improve, and submit pull requests.
 
 ## Privacy
 
-- The extension stores a single preference locally in `chrome.storage.local` or `browser.storage.local` to remember whether the theme is enabled.
-- It does not collect, transmit, or sell personal data.
-- It does not use remote analytics, tracking, or advertising scripts.
+The extension stores a single preference locally in `chrome.storage.local` / `browser.storage.local` and does not collect, transmit, or sell personal data. It does not include a background/service worker that sends data, and it contains no remote analytics or tracking scripts — all runtime assets are bundled locally in the `extension/` folder (see [extension/manifest.json](extension/manifest.json)). The only permission requested is `storage`; no host permissions are required.
 
 ---
 
-For packaging scripts and other resources see the project root (e.g. `generate-chrome-extension-zip.sh`).
+For packaging scripts and other resources see the project root (Example: `generate-extension-zip.sh`).
 
 ## Authors
 
-<!-- <a href="https://github.com/gaurav7902">
-  <img src="https://github.com/gaurav7902.png" width="60" height="60" style="border-radius: 50%;" alt="gaurav7902">
-</a> -->
-
-[@gaurav7902](https://github.com/gaurav7902)
+<div align="center">
+   <table><tr>
+      <td><img src="https://github.com/gaurav7902.png" width="96" style="border-radius:50%; border:3px solid #000;" alt="gaurav7902"></td>
+      <td style="padding-left:12px">
+         <h3><a href="https://github.com/gaurav7902">gaurav7902</a></h3>
+         <p>Maintainer • Open to contributions</p>
+         <p><a href="https://github.com/gaurav7902"><img src="https://img.shields.io/badge/Follow-@gaurav7902-0366d6?style=flat-square&logo=github" alt="Follow" /></a></p>
+      </td>
+   </tr></table>
+</div>
 
 ## License
 

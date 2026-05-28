@@ -1,14 +1,14 @@
 #!/bin/bash
 
-OUTPUT="codeforces-darktheme-chrome-extension.zip"
+OUTPUT="codeforces-darktheme-extension.zip"
 
 # Ensure extension folder exists
-if [[ ! -d "extension-chrome" ]]; then
+if [[ ! -d "extension" ]]; then
     echo "Error: extension folder not found."
     exit 1
 fi
 
-cd extension-chrome || exit 1
+cd extension || exit 1
 
 # Remove old zip if exists
 rm -f "../$OUTPUT"
@@ -18,7 +18,7 @@ shopt -s dotglob nullglob
 FILES=(*)
 
 if [[ ${#FILES[@]} -eq 0 ]]; then
-    echo "Error: extension-chrome is empty."
+    echo "Error: extension is empty."
     exit 1
 fi
 
