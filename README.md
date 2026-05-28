@@ -17,7 +17,7 @@ This is the extension version of Codeforces Dark Theme. If you want the userscri
 ### Chrome / Edge / Brave
 
 1. Download `codeforces-darktheme-extension.zip` from releases:  
-   [Release v1.0.0](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.0) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
+   [Release v1.0.0](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.1-5cd9d85) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
 2. Unzip the file to a local folder.
 3. Open your Chromium-based browser (Chrome, Edge, Brave) and go to `chrome://extensions/`, or `edge://extensions/`, or `brave://extensions/` as appropriate.
 4. Enable "Developer mode" (top right).
@@ -27,7 +27,7 @@ This is the extension version of Codeforces Dark Theme. If you want the userscri
 ### Firefox (temporary)
 
 1. Download `codeforces-darktheme-extension.zip` from releases:  
-   [Release v1.0.0](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.0) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
+   [Release v1.0.0](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.1-5cd9d85) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
 2. Unzip the file to a local folder.
 3. Open `about:debugging#/runtime/this-firefox` in Firefox.
 4. Click "Load Temporary Add-on..." and pick `manifest.json` from the unzipped folder.
