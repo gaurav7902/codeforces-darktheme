@@ -2,6 +2,21 @@
 
 ![Tile](assets/promo-tile.svg)
 
+### Quick Navigation
+
+- [Overview](#overview)
+- [Screenshot](#screenshot)
+- [Quick install (developer mode)](#quick-install-developer-mode)
+    - [Chrome / Edge / Brave](#chrome--edge--brave)
+    - [Firefox (temporary)](#firefox-temporary)
+- [Sources and licenses](#sources-and-licenses)
+- [Contributing](#contributing)
+- [Notes](#notes)
+- [Store listing copy](#store-listing-copy)
+- [Privacy](#privacy)
+- [Authors](#authors)
+- [License](#license)
+
 ## Overview
 
 This repository provides a dark theme for Codeforces packaged as a small browser extension. All runtime assets used by the extension are bundled locally in the `extension/` folders (`darktheme.css`, `desert.css`, `monokai.css`, and `content.js`).
@@ -43,7 +58,7 @@ This is the extension version of Codeforces Dark Theme. If you want the userscri
 
 ## Contributing
 
-Contributions are welcome! Feel free to fork, improve, and submit pull requests.
+Contributions are welcome! Feel free to fork, improve, and submit pull requests or raise issues.
 
 ## Notes
 
