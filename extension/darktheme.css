@@ -71,6 +71,11 @@ a {
     background-color: white !important;
 }
 
+#header > div:first-child a[href='/'] img[alt='Codeforces'] {
+    background-color: transparent !important;
+    content: url('imgs/codeforces-logo-dark.png') !important;
+}
+
 img[src^='//st.codeforces.com']:not(.ajax-loading-gif),
 img[src^='//sta.codeforces.com']:not(.ajax-loading-gif),
 img[src$='/lightning-16x16.png'],
