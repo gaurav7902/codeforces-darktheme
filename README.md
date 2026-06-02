@@ -7,11 +7,12 @@
 - [Overview](#overview)
 - [Screenshot](#screenshot)
 - [Quick install (developer mode)](#quick-install-developer-mode)
+    - [Firefox](#firefox)
     - [Chrome / Edge / Brave](#chrome--edge--brave)
-    - [Firefox (temporary)](#firefox-temporary)
 - [Sources and licenses](#sources-and-licenses)
 - [Contributing](#contributing)
 - [Notes](#notes)
+- [Packaging](#packaging)
 - [Store listing copy](#store-listing-copy)
 - [Privacy](#privacy)
 - [Authors](#authors)
@@ -29,6 +30,13 @@ This is the extension version of Codeforces Dark Theme. If you want the userscri
 
 ## Quick install (developer mode)
 
+### Firefox
+
+Available on addon store :)
+
+Click Here 👉
+[![Firefox](https://img.shields.io/badge/Firefox-Install-FF7139?logo=firefox&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/codeforces-dark-theme/)
+
 ### Chrome / Edge / Brave
 
 1. Download `codeforces-darktheme-extension.zip` from releases:  
@@ -38,15 +46,6 @@ This is the extension version of Codeforces Dark Theme. If you want the userscri
 4. Enable "Developer mode" (top right).
 5. Click "Load unpacked" and select `manifest.json` from the unzipped folder.
 6. Open https://codeforces.com, toggle the extension, and confirm the dark theme is applied.
-
-### Firefox (temporary)
-
-1. Download `codeforces-darktheme-extension.zip` from releases:  
-   [Releases](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.1-ebbeb26) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
-2. Unzip the file to a local folder.
-3. Open `about:debugging#/runtime/this-firefox` in Firefox.
-4. Click "Load Temporary Add-on..." and pick `manifest.json` from the unzipped folder.
-5. Open https://codeforces.com, toggle the extension, and confirm the dark theme is applied.
 
 ## Sources and licenses
 
@@ -64,6 +63,10 @@ Contributions are welcome! Feel free to fork, improve, and submit pull requests 
 
 - The `extension` folder contain the unpacked extension files and the third-party styles packaged locally.
 - If you redistribute this extension, please respect and include the third-party licenses (see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)).
+
+## Packaging
+
+For packaging and release, see `generate-extension-zip.sh` at the project root. The script builds the extension zip used in releases.
 
 ## Store listing copy
 
