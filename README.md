@@ -48,7 +48,7 @@ Click Here 👉
 ### Chrome / Brave
 
 1. Download `codeforces-darktheme-extension.zip` from releases:  
-   [Releases](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.2-cf6fad3) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
+   [Releases](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.3-3e01840) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
 2. Unzip the file to a local folder.
 3. Open your Chromium-based browser (Chrome, Edge, Brave) and go to `chrome://extensions/`, or `edge://extensions/`, or `brave://extensions/` as appropriate.
 4. Enable "Developer mode" (top right).
