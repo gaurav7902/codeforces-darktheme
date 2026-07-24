@@ -21,7 +21,7 @@
 
 ## Overview
 
-This repository provides a dark theme for Codeforces packaged as a small browser extension. All runtime assets used by the extension are bundled locally in the `extension/` folders (`darktheme.css`, `desert.css`, `monokai.css`, and `content.js`).
+This repository provides a dark theme for Codeforces packaged as a small browser extension. All runtime assets used by the extension are bundled locally in the `extension/` folders. It provides a high-contrast reading and coding experience, incorporating bundled syntax highlighting for both the Ace editor and Prettify.js.
 
 This is the extension version of Codeforces Dark Theme. If you want the userscript version, see the original project: https://github.com/GaurangTandon/codeforces-darktheme
 
@@ -79,7 +79,7 @@ For packaging and release, see `generate-extension-zip.sh` at the project root. 
 ## Store listing copy
 
 - **Short description**: Dark theme for Codeforces with bundled syntax highlighting styles and a simple on/off popup.
-- **Long description**: Codeforces Dark Theme is a lightweight browser extension that applies a dark, high-contrast reading and coding experience to Codeforces. It ships all runtime assets locally, including theme CSS and editor styling, and lets you enable or disable the theme from the popup. The extension is minimal, fast, and easy to install in developer mode.
+- **Long description**: Codeforces Dark Theme is a lightweight browser extension that applies a dark, high-contrast reading and coding experience to Codeforces. It ships all runtime assets locally, including theme CSS and editor styling (Desert and Monokai), and lets you enable or disable the theme from the popup. The extension is minimal, fast, and easy to install in developer mode.
 
 ## Privacy
 

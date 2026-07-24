@@ -30,7 +30,7 @@
     "content_scripts": [
         {
             "matches": ["*://codeforces.com/*", "*://*.codeforces.com/*"],
-            "js": ["content.js"],
+            "js": ["utils.js", "content.js"],
             "run_at": "document_start"
         }
     ],

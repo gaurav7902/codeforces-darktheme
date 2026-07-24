@@ -1,11 +1,32 @@
 :root {
-    --backgroundGreyColor: #1e1e1e;
-    --tableGreyRow: #2e2e2e;
-    --whiteTextColor: rgb(200, 200, 200);
-    --inputBoxBackgroundBorderColor: #383838;
-    --redColorJustPassesA11Y: hsl(0, 100%, 64%);
-    --genericLinkBlueColor: #21b0fd;
-    --genericLinkVisitedBlueColor: #8ab1ff;
+    /* Base Backgrounds */
+    --cf-bg-main: #1e1e1e;
+    --cf-bg-secondary: #2e2e2e;
+    --cf-bg-input: #383838;
+    --cf-bg-highlight: #13203a;
+    --cf-bg-darker: #111;
+    --cf-bg-lighter: #4f4f4f;
+    --cf-bg-test-line: rgb(26, 26, 26);
+    --cf-bg-panel: #585858;
+
+    /* Text Colors */
+    --cf-text-main: rgb(200, 200, 200);
+    --cf-text-white: #ffffff;
+    --cf-text-muted: #a8a8a8;
+    --cf-text-dim: #bababa;
+    --cf-text-dark: #000000;
+
+    /* Accent Colors */
+    --cf-accent-blue: #21b0fd;
+    --cf-accent-blue-visited: #8ab1ff;
+    --cf-accent-red: hsl(0, 100%, 64%);
+    --cf-accent-green: #00c700;
+    --cf-accent-blue-dark: #014486;
+    --cf-accent-blue-bright: #4e9fef;
+
+    /* Specific UI elements */
+    --cf-border-color: #999;
+    --cf-border-dark: #000;
 }
 
 body:not(.wysiwyg),
@@ -17,8 +38,8 @@ body:not(.wysiwyg),
 .datatable > div.dark,
 #facebox .content,
 .talk-content div[id^='history-text-content'] {
-    background: var(--backgroundGreyColor) !important;
-    background-color: var(--backgroundGreyColor) !important;
+    background: var(--cf-bg-main) !important;
+    background-color: var(--cf-bg-main) !important;
 }
 
 .spoiler-content,
@@ -27,15 +48,15 @@ body:not(.wysiwyg),
 }
 
 .topic .content {
-    border-left-color: #999 !important;
+    border-left-color: var(--cf-border-color) !important;
 }
 
 .comment-table {
-    border-color: grey !important;
+    border-color: var(--cf-text-muted) !important;
 }
 
 div.ttypography .bordertable thead th:not(:last-child) {
-    border-right-color: #000;
+    border-right-color: var(--cf-border-dark);
 }
 
 .search,
@@ -44,21 +65,21 @@ input[name$='Difficulty'],
 input[type='text'],
 #title,
 #comment {
-    background-color: var(--inputBoxBackgroundBorderColor) !important;
-    border-color: var(--inputBoxBackgroundBorderColor) !important;
-    color: var(--whiteTextColor) !important;
+    background-color: var(--cf-bg-input) !important;
+    border-color: var(--cf-bg-input) !important;
+    color: var(--cf-text-main) !important;
 }
 
 td.dark,
 td.dark div.dark,
 .ttypography tbody tr:hover td,
 .status-frame-datatable tr td.dark {
-    background-color: var(--tableGreyRow) !important;
+    background-color: var(--cf-bg-secondary) !important;
 }
 
 div.ttypography tbody tr:hover th {
-    color: black !important;
-    border-color: black !important;
+    color: var(--cf-text-dark) !important;
+    border-color: var(--cf-text-dark) !important;
 }
 
 a {
@@ -84,12 +105,12 @@ img[src$='/ok-16x16.png'] {
 }
 
 pre {
-    background-color: #333 !important;
+    background-color: var(--cf-bg-darker) !important;
 }
 
 body > pre,
 div.ttypography pre {
-    color: var(--whiteTextColor) !important;
+    color: var(--cf-text-main) !important;
 }
 
 .comment-table.highlight-blue,
@@ -98,7 +119,7 @@ div.ttypography pre {
 table tr.highlighted-row td,
 .highlight-blue,
 .lang-chooser div[style^='background-color: #EAF4FF;'] {
-    background-color: #13203a !important;
+    background-color: var(--cf-bg-highlight) !important;
 }
 
 .standings .cell-accepted,
@@ -107,15 +128,15 @@ table tr.highlighted-row td,
 }
 
 .standings .cell-challenged {
-    color: var(--redColorJustPassesA11Y) !important;
+    color: var(--cf-accent-red) !important;
 }
 
 .standings .cell-passed-system-test {
-    color: #00c700 !important;
+    color: var(--cf-accent-green) !important;
 }
 
 blockquote {
-    color: #a8a8a8 !important;
+    color: var(--cf-text-muted) !important;
 }
 
 div.alert-success {
@@ -125,9 +146,9 @@ div.alert-success {
 
 div.ttypography .tt,
 .search-help code {
-    color: #fff !important;
-    border-color: #333 !important;
-    background-color: #333 !important;
+    color: var(--cf-text-white) !important;
+    border-color: var(--cf-bg-darker) !important;
+    background-color: var(--cf-bg-darker) !important;
 }
 
 .sidebar-menu ul li {
@@ -135,8 +156,8 @@ div.ttypography .tt,
 }
 
 .sidebar-menu ul li:hover {
-    border: 1px solid #2e2e2e !important;
-    background-color: #2e2e2e !important;
+    border: 1px solid var(--cf-bg-secondary) !important;
+    background-color: var(--cf-bg-secondary) !important;
 }
 
 .problems tr.rejected-problem td.act {
@@ -155,7 +176,6 @@ div.ttypography .tt,
 }
 
 div.ttypography .MathJax {
-    -webkit-filter: invert(1) !important;
     filter: invert(1) !important;
 }
 
@@ -180,16 +200,16 @@ table tbody tr th a img[alt^='Sort'] {
 .miu-comment,
 input[name^='tag'].ac_input,
 .send-talk-form table .wysiwyg {
-    background-color: var(--inputBoxBackgroundBorderColor) !important;
-    border-color: var(--inputBoxBackgroundBorderColor) !important;
+    background-color: var(--cf-bg-input) !important;
+    border-color: var(--cf-bg-input) !important;
 }
 
 input[type='submit'],
 input[type='button'],
 input[type='file'] {
-    color: var(--whiteTextColor) !important;
-    background: #4f4f4f !important;
-    border-color: #4f4f4f !important;
+    color: var(--cf-text-main) !important;
+    background: var(--cf-bg-lighter) !important;
+    border-color: var(--cf-bg-lighter) !important;
 }
 
 .miu-complete,
@@ -208,7 +228,7 @@ textarea[name='input'],
 textarea[name='output'],
 #sourceCodeTextarea {
     background-color: #272822;
-    color: white;
+    color: var(--cf-text-white);
 }
 
 .delete-resource-link,
@@ -226,7 +246,7 @@ textarea[name='output'],
 }
 
 span.error {
-    color: var(--redColorJustPassesA11Y) !important;
+    color: var(--cf-accent-red) !important;
 }
 
 .roundbox.highlight-blue .caption.titled {
@@ -243,11 +263,11 @@ span.verdict-unsuccessful-challenge,
 span.cell-rejected,
 a:not([href]):not(.rated-user),
 a:link:not(.rated-user) {
-    color: var(--genericLinkBlueColor) !important;
+    color: var(--cf-accent-blue) !important;
 }
 
 a:visited:not(.rated-user) {
-    color: var(--genericLinkVisitedBlueColor) !important;
+    color: var(--cf-accent-blue-visited) !important;
 }
 
 .info,
@@ -277,30 +297,62 @@ span#u_0_4,
 #header h3,
 body > p,
 body > ul {
-    color: var(--whiteTextColor) !important;
+    color: var(--cf-text-main) !important;
+}
+
+/* Migrated from content.js */
+#pageContent div div h3 a,
+.comment-table.highlight-blue .right .ttypography p,
+.comment-table.highlight-blue .right .info {
+    color: var(--cf-text-white) !important;
+}
+
+.unread td {
+    background-color: var(--cf-bg-highlight) !important;
+}
+
+div.alert-success a {
+    color: var(--cf-accent-blue-dark) !important;
+}
+
+.rtable span {
+    color: var(--cf-text-main) !important;
+}
+
+.test-example-line {
+    background-color: var(--cf-bg-test-line) !important;
+}
+
+font[color="red"] {
+    color: var(--cf-accent-red) !important;
+}
+
+[style*="color: rgb(0, 128, 0)"],
+[style*="color: #008000"] {
+    color: var(--cf-accent-green) !important;
 }
 
 ul.second-level-menu-list li:hover a:hover {
-    color: #014486 !important;
+    color: var(--cf-accent-blue-dark) !important;
 }
 
 ul.second-level-menu-list li:hover a:link {
-    color: #014486 !important;
+    color: var(--cf-accent-blue-dark) !important;
 }
 
 li.selectedLava a:link {
-    color: #014486 !important;
+    color: var(--cf-accent-blue-dark) !important;
 }
 
 ul.second-level-menu-list:hover
     li:hover:not(.selectedLava)
     + .selectedLava
     a:link {
-    color: var(--genericLinkBlueColor) !important;
+    color: var(--cf-accent-blue) !important;
 }
 
 a:link.notice {
-    color: #bababa !important;
+    color: var(--cf-text-dim) !important;
 }
 
 .tex-formula {
@@ -309,7 +361,7 @@ a:link.notice {
 
 div ul.menu-list li a:link,
 div ul.menu-list li a:visited {
-    color: white !important;
+    color: var(--cf-text-white) !important;
 }
 
 .verdict-rejected {
@@ -318,11 +370,11 @@ div ul.menu-list li a:visited {
 
 a.red-link[href^='/contestRegistration'] {
     background-color: #9a0000 !important;
-    color: var(--whiteTextColor) !important;
+    color: var(--cf-text-main) !important;
 }
 
 .topic .content center a {
-    color: var(--whiteTextColor) !important;
+    color: var(--cf-text-main) !important;
 }
 
 .topic .title p {
@@ -341,19 +393,19 @@ pre.output,
 pre.answer,
 pre.checker,
 pre.diagnostics {
-    color: white !important;
+    color: var(--cf-text-white) !important;
 }
 
 span.contest-state-regular,
 .countdown {
-    color: #bababa !important;
+    color: var(--cf-text-dim) !important;
 }
 
 .datatable,
 .status-frame-datatable {
-    color: var(--whiteTextColor) !important;
+    color: var(--cf-text-main) !important;
     border-radius: 5px;
-    background-color: #585858 !important;
+    background-color: var(--cf-bg-panel) !important;
 }
 
 .datatable td.state[style^='back'] .notice {
@@ -361,7 +413,7 @@ span.contest-state-regular,
 }
 
 .personal-sidebar div ul.propertyLinks li:nth-child(2) span[style*='green'] {
-    color: #00c700 !important;
+    color: var(--cf-accent-green) !important;
 }
 
 .personal-sidebar
@@ -369,11 +421,11 @@ span.contest-state-regular,
     ul.propertyLinks
     li:nth-child(2)
     span:not([style*='green']) {
-    color: #a8a8a8 !important;
+    color: var(--cf-text-muted) !important;
 }
 
 .fix-tag-topic-contrast span a {
-    color: white !important;
+    color: var(--cf-text-white) !important;
 }
 
 #vote-list-filterDifficultyLowerBorder li a.vote-item:hover,
@@ -412,7 +464,7 @@ span.contest-state-regular,
 }
 
 td.dark span[style^='color: #0000bb;'] {
-    color: #4e9fef !important;
+    color: var(--cf-accent-blue-bright) !important;
 }
 
 .datatable td.state a[href$='standings'] {
@@ -429,7 +481,7 @@ span.user-admin,
 a.user-admin,
 span.user-black,
 a.user-black {
-    color: #fff !important;
+    color: var(--cf-text-white) !important;
 }
 
 tr.user-blue td,
@@ -443,7 +495,7 @@ span.user-red,
 a.user-red,
 span.user-legendary,
 a.user-legendary {
-    color: var(--redColorJustPassesA11Y) !important;
+    color: var(--cf-accent-red) !important;
 }
 
 tr.user-cyan td,

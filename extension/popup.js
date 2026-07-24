@@ -1,58 +1,11 @@
 (() => {
     'use strict';
 
-    const STORAGE_KEY = 'enabled';
+    const STORAGE_KEY_ENABLED = 'enabled';
+    const { storageGet, storageSet } = window.CFDarkThemeUtils;
 
     function getToggleIconPath(enabled, size) {
         return `icons/icon${size}.png`;
-    }
-
-    function getStorageArea() {
-        try {
-            if (
-                typeof chrome !== 'undefined' &&
-                chrome.storage &&
-                chrome.storage.local
-            ) {
-                return chrome.storage.local;
-            }
-            if (
-                typeof browser !== 'undefined' &&
-                browser.storage &&
-                browser.storage.local
-            ) {
-                return browser.storage.local;
-            }
-        } catch (error) {}
-        return null;
-    }
-
-    function storageGet(defaults) {
-        const area = getStorageArea();
-        if (!area) return Promise.resolve(defaults);
-
-        try {
-            const result = area.get(defaults);
-            if (result && typeof result.then === 'function') return result;
-        } catch (error) {}
-
-        return new Promise((resolve) => {
-            area.get(defaults, (items) => resolve(items || defaults));
-        });
-    }
-
-    function storageSet(items) {
-        const area = getStorageArea();
-        if (!area) return Promise.resolve();
-
-        try {
-            const result = area.set(items);
-            if (result && typeof result.then === 'function') return result;
-        } catch (error) {}
-
-        return new Promise((resolve) => {
-            area.set(items, () => resolve());
-        });
     }
 
     function updateUI(enabled) {
@@ -82,16 +35,31 @@
 
     document.addEventListener('DOMContentLoaded', async () => {
         const toggle = document.getElementById('enabled-toggle');
-        const defaults = { [STORAGE_KEY]: true };
+        const versionText = document.getElementById('version-text');
+
+        // Load version from manifest
+        try {
+            const manifestResponse = await fetch(chrome.runtime.getManifest());
+            const manifest = await manifestResponse.json();
+            if (versionText) {
+                versionText.textContent = `v${manifest.version}`;
+            }
+        } catch (e) {
+            console.error('Could not load version from manifest', e);
+        }
+
+        const defaults = {
+            [STORAGE_KEY_ENABLED]: true,
+        };
         const items = await storageGet(defaults);
-        const enabled = items[STORAGE_KEY] !== false;
+        const enabled = items[STORAGE_KEY_ENABLED] !== false;
 
         if (toggle) {
             toggle.checked = enabled;
             toggle.addEventListener('change', async () => {
                 const nextEnabled = toggle.checked;
                 updateUI(nextEnabled);
-                await storageSet({ [STORAGE_KEY]: nextEnabled });
+                await storageSet({ [STORAGE_KEY_ENABLED]: nextEnabled });
             });
         }
 
