@@ -6,7 +6,7 @@
 
 - [Overview](#overview)
 - [Screenshot](#screenshot)
-- [Quick install (developer mode)](#quick-install-developer-mode)
+- [Quick install](#quick-install-developer-mode)
     - [Firefox](#firefox)
     - [Microsoft Edge](#microsoft-edge)
     - [Chrome / Edge / Brave](#chrome--brave)
