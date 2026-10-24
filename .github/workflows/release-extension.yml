@@ -28,6 +28,10 @@ jobs:
             - name: Build extension zip
               run: bash generate-extension-zip.sh
 
+            - name: Read commit short SHA
+              id: sha
+              run: echo "short_sha=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+
             - name: Create GitHub release
               uses: softprops/action-gh-release@v2
               with:
