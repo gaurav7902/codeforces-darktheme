@@ -30,6 +30,7 @@ This is the extension version of Codeforces Dark Theme. If you want the userscri
 ![screenshot](assets/screenshot.png)
 
 ## Quick install
+
 ## Quick install
 
 ### Firefox

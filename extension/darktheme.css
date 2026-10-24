@@ -37,7 +37,7 @@ body:not(.wysiwyg),
 .datatable th,
 .datatable > div.dark,
 #facebox .content,
-.talk-content div[id^='history-text-content'] {
+.talk-content div[id^="history-text-content"] {
     background: var(--cf-bg-main) !important;
     background-color: var(--cf-bg-main) !important;
 }
@@ -61,8 +61,8 @@ div.ttypography .bordertable thead th:not(:last-child) {
 
 .search,
 .ac_input,
-input[name$='Difficulty'],
-input[type='text'],
+input[name$="Difficulty"],
+input[type="text"],
 #title,
 #comment {
     background-color: var(--cf-bg-input) !important;
@@ -88,19 +88,19 @@ a {
 
 #header > div:first-child img,
 ._logo_div img,
-.sidebox img[alt='Logo'] {
+.sidebox img[alt="Logo"] {
     background-color: white !important;
 }
 
-#header > div:first-child a[href='/'] img[alt='Codeforces'] {
+#header > div:first-child a[href="/"] img[alt="Codeforces"] {
     background-color: transparent !important;
-    content: url('imgs/codeforces-logo-dark.png') !important;
+    content: url("imgs/codeforces-logo-dark.png") !important;
 }
 
-img[src^='//st.codeforces.com']:not(.ajax-loading-gif),
-img[src^='//sta.codeforces.com']:not(.ajax-loading-gif),
-img[src$='/lightning-16x16.png'],
-img[src$='/ok-16x16.png'] {
+img[src^="//st.codeforces.com"]:not(.ajax-loading-gif),
+img[src^="//sta.codeforces.com"]:not(.ajax-loading-gif),
+img[src$="/lightning-16x16.png"],
+img[src$="/ok-16x16.png"] {
     background-color: rgba(255, 255, 255, 0) !important;
 }
 
@@ -118,7 +118,7 @@ div.ttypography pre {
 .standings tr.highlighted-row td,
 table tr.highlighted-row td,
 .highlight-blue,
-.lang-chooser div[style^='background-color: #EAF4FF;'] {
+.lang-chooser div[style^="background-color: #EAF4FF;"] {
     background-color: var(--cf-bg-highlight) !important;
 }
 
@@ -184,29 +184,29 @@ div.ttypography a:focus {
     background-color: #020466 !important;
 }
 
-table tbody tr th a img[alt^='Sort'] {
+table tbody tr th a img[alt^="Sort"] {
     filter: invert(1);
 }
 
-.datatable td.state[style^='background-color: rgb(221, 238, 255);'] {
+.datatable td.state[style^="background-color: rgb(221, 238, 255);"] {
     background-color: #4a4a4a !important;
 }
 
-.datatable td.state[style^='background-color: rgb(212, 237, 201);'] {
+.datatable td.state[style^="background-color: rgb(212, 237, 201);"] {
     background-color: #005a07 !important;
 }
 
 .miu-complete,
 .miu-comment,
-input[name^='tag'].ac_input,
+input[name^="tag"].ac_input,
 .send-talk-form table .wysiwyg {
     background-color: var(--cf-bg-input) !important;
     border-color: var(--cf-bg-input) !important;
 }
 
-input[type='submit'],
-input[type='button'],
-input[type='file'] {
+input[type="submit"],
+input[type="button"],
+input[type="file"] {
     color: var(--cf-text-main) !important;
     background: var(--cf-bg-lighter) !important;
     border-color: var(--cf-bg-lighter) !important;
@@ -224,8 +224,8 @@ input[type='file'] {
     filter: invert(90%) hue-rotate(180deg);
 }
 
-textarea[name='input'],
-textarea[name='output'],
+textarea[name="input"],
+textarea[name="output"],
 #sourceCodeTextarea {
     background-color: #272822;
     color: var(--cf-text-white);
@@ -368,7 +368,7 @@ div ul.menu-list li a:visited {
     color: lightblue !important;
 }
 
-a.red-link[href^='/contestRegistration'] {
+a.red-link[href^="/contestRegistration"] {
     background-color: #9a0000 !important;
     color: var(--cf-text-main) !important;
 }
@@ -408,11 +408,11 @@ span.contest-state-regular,
     background-color: var(--cf-bg-panel) !important;
 }
 
-.datatable td.state[style^='back'] .notice {
+.datatable td.state[style^="back"] .notice {
     color: #cccccc !important;
 }
 
-.personal-sidebar div ul.propertyLinks li:nth-child(2) span[style*='green'] {
+.personal-sidebar div ul.propertyLinks li:nth-child(2) span[style*="green"] {
     color: var(--cf-accent-green) !important;
 }
 
@@ -420,7 +420,7 @@ span.contest-state-regular,
     div
     ul.propertyLinks
     li:nth-child(2)
-    span:not([style*='green']) {
+    span:not([style*="green"]) {
     color: var(--cf-text-muted) !important;
 }
 
@@ -463,11 +463,11 @@ span.contest-state-regular,
     border-radius: 5px !important;
 }
 
-td.dark span[style^='color: #0000bb;'] {
+td.dark span[style^="color: #0000bb;"] {
     color: var(--cf-accent-blue-bright) !important;
 }
 
-.datatable td.state a[href$='standings'] {
+.datatable td.state a[href$="standings"] {
     color: #8cc3f9 !important;
 }
 
@@ -516,13 +516,13 @@ a.user-gray {
     color: #8c8c8c !important;
 }
 
-div.diffHtmlTarget pre.prettyprint del[style^='background:#ff8080'] {
+div.diffHtmlTarget pre.prettyprint del[style^="background:#ff8080"] {
     background: #7b1313 !important;
 }
 
-div.diffHtmlTarget pre.prettyprint ins[style^='background:#80ff80'] {
+div.diffHtmlTarget pre.prettyprint ins[style^="background:#80ff80"] {
     background: #004600 !important;
 }
-div.diffHtmlTarget pre.prettyprint ins[style^='background:#80ff80'] .lit {
+div.diffHtmlTarget pre.prettyprint ins[style^="background:#80ff80"] .lit {
     background: #ff9d9d !important;
 }

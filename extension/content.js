@@ -1,8 +1,8 @@
 (() => {
-    'use strict';
+    "use strict";
 
-    const STORAGE_KEY_ENABLED = 'enabled';
-    const { getRuntimeURL, storageGet } = window.CFDarkThemeUtils;
+    const STORAGE_KEY_ENABLED = "enabled";
+    const {getRuntimeURL, storageGet} = window.CFDarkThemeUtils;
 
     let themeEnabled = true;
     let themeInitialized = false;
@@ -11,8 +11,8 @@
     const originalStyleAttributes = new WeakMap();
 
     const colors = {
-        whiteTextColor: 'rgb(220, 220, 220)',
-        redColorJustPassesA11Y: '#ff3333',
+        whiteTextColor: "rgb(220, 220, 220)",
+        redColorJustPassesA11Y: "#ff3333",
     };
 
     const addCleanup = (fn) => cleanupCallbacks.push(fn);
@@ -20,7 +20,9 @@
     const clearCleanupCallbacks = () => {
         while (cleanupCallbacks.length > 0) {
             const fn = cleanupCallbacks.pop();
-            try { fn(); } catch (e) {}
+            try {
+                fn();
+            } catch (e) {}
         }
     };
 
@@ -49,12 +51,12 @@
     };
 
     const loadLocalStyles = () => {
-        const styles = ['darktheme.css', 'desert.css', 'monokai.css'];
-        styles.forEach(style => {
-            injectResource('link', {
-                rel: 'stylesheet',
+        const styles = ["darktheme.css", "desert.css", "monokai.css"];
+        styles.forEach((style) => {
+            injectResource("link", {
+                rel: "stylesheet",
                 href: getRuntimeURL(style),
-                'data-codeforces-darktheme': 'true',
+                "data-codeforces-darktheme": "true",
             });
         });
     };
@@ -62,20 +64,20 @@
     const overrideStyleAttribute = (elm, prop, value) => {
         try {
             if (!originalStyleAttributes.has(elm)) {
-                originalStyleAttributes.set(elm, elm.getAttribute('style'));
+                originalStyleAttributes.set(elm, elm.getAttribute("style"));
                 addCleanup(() => {
                     try {
                         const originalStyle = originalStyleAttributes.get(elm);
                         if (originalStyle === null) {
-                            elm.removeAttribute('style');
-                        } else if (typeof originalStyle !== 'undefined') {
-                            elm.setAttribute('style', originalStyle);
+                            elm.removeAttribute("style");
+                        } else if (typeof originalStyle !== "undefined") {
+                            elm.setAttribute("style", originalStyle);
                         }
                         originalStyleAttributes.delete(elm);
                     } catch (e) {}
                 });
             }
-            elm.style.setProperty(prop, value, 'important');
+            elm.style.setProperty(prop, value, "important");
         } catch (e) {}
     };
 
@@ -84,7 +86,9 @@
         elm.classList.add(className);
         if (!hadClass) {
             addCleanup(() => {
-                try { elm.classList.remove(className); } catch (e) {}
+                try {
+                    elm.classList.remove(className);
+                } catch (e) {}
             });
         }
     };
@@ -92,11 +96,15 @@
     const setStylePropertyWithCleanup = (elm, prop, value, priority) => {
         const previousValue = elm.style.getPropertyValue(prop);
         const previousPriority = elm.style.getPropertyPriority(prop);
-        elm.style.setProperty(prop, value, priority || '');
+        elm.style.setProperty(prop, value, priority || "");
         addCleanup(() => {
             try {
                 if (previousValue) {
-                    elm.style.setProperty(prop, previousValue, previousPriority);
+                    elm.style.setProperty(
+                        prop,
+                        previousValue,
+                        previousPriority,
+                    );
                 } else {
                     elm.style.removeProperty(prop);
                 }
@@ -126,8 +134,9 @@
     const createGlobalObserver = (tasks) => {
         const applyAll = (root) => {
             if (!themeEnabled) return;
-            tasks.forEach(({ selector, callback }) => {
-                if (root.nodeType === 1 && root.matches(selector)) callback(root);
+            tasks.forEach(({selector, callback}) => {
+                if (root.nodeType === 1 && root.matches(selector))
+                    callback(root);
                 root.querySelectorAll(selector).forEach(callback);
             });
         };
@@ -146,7 +155,10 @@
             nodesToProcess.forEach(applyAll);
         });
 
-        observer.observe(document.documentElement, { childList: true, subtree: true });
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true,
+        });
 
         // Initial apply
         applyAll(document.documentElement);
@@ -161,7 +173,8 @@
 
         const themeTasks = [
             {
-                selector: '#pageContent div div h3 a, .comment-table.highlight-blue .right .ttypography p, .comment-table.highlight-blue .right .info',
+                selector:
+                    "#pageContent div div h3 a, .comment-table.highlight-blue .right .ttypography p, .comment-table.highlight-blue .right .info",
                 callback: (elm) => {
                     const obs = new MutationObserver((mutationList) => {
                         if (!themeEnabled) {
@@ -169,53 +182,88 @@
                             return;
                         }
                         for (const mutation of mutationList) {
-                            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-                                if (elm.style.getPropertyValue('color') !== 'white' ||
-                                    elm.style.getPropertyPriority('color') !== 'important') {
-                                    elm.style.setProperty('color', 'white', 'important');
+                            if (
+                                mutation.type === "attributes" &&
+                                mutation.attributeName === "style"
+                            ) {
+                                if (
+                                    elm.style.getPropertyValue("color") !==
+                                        "white" ||
+                                    elm.style.getPropertyPriority("color") !==
+                                        "important"
+                                ) {
+                                    elm.style.setProperty(
+                                        "color",
+                                        "white",
+                                        "important",
+                                    );
                                 }
                             }
                         }
                     });
-                    overrideStyleAttribute(elm, 'color', 'white');
-                    obs.observe(elm, { attributes: true, attributeFilter: ['style'] });
+                    overrideStyleAttribute(elm, "color", "white");
+                    obs.observe(elm, {
+                        attributes: true,
+                        attributeFilter: ["style"],
+                    });
                     addCleanup(() => obs.disconnect());
-                }
+                },
             },
             {
-                selector: '.datatable div:nth-child(5)',
-                callback: (elm) => addClassWithCleanup(elm, 'dark')
+                selector: ".datatable div:nth-child(5)",
+                callback: (elm) => addClassWithCleanup(elm, "dark"),
             },
             {
-                selector: '.unread td',
-                callback: (elm) => setStylePropertyWithCleanup(elm, 'background-color', '#13203a', 'important')
+                selector: ".unread td",
+                callback: (elm) =>
+                    setStylePropertyWithCleanup(
+                        elm,
+                        "background-color",
+                        "#13203a",
+                        "important",
+                    ),
             },
             {
-                selector: 'body > h3',
+                selector: "body > h3",
                 callback: (elm) => {
-                    if (elm.innerText && elm.innerText.startsWith('The requested URL was not found on this server.')) {
-                        addClassWithCleanup(document.body, 'notfoundpage');
+                    if (
+                        elm.innerText &&
+                        elm.innerText.startsWith(
+                            "The requested URL was not found on this server.",
+                        )
+                    ) {
+                        addClassWithCleanup(document.body, "notfoundpage");
                     }
-                }
+                },
             },
             {
-                selector: '.second-level-menu-list li.backLava',
+                selector: ".second-level-menu-list li.backLava",
                 callback: (elm) => {
                     try {
-                        setStylePropertyWithCleanup(elm, 'background-image', `url(${getRuntimeURL('imgs/lava-right2.png')})`);
+                        setStylePropertyWithCleanup(
+                            elm,
+                            "background-image",
+                            `url(${getRuntimeURL("imgs/lava-right2.png")})`,
+                        );
                         if (elm.firstElementChild) {
-                            setStylePropertyWithCleanup(elm.firstElementChild, 'background-image', `url(${getRuntimeURL('imgs/lava-left2.png')})`);
+                            setStylePropertyWithCleanup(
+                                elm.firstElementChild,
+                                "background-image",
+                                `url(${getRuntimeURL("imgs/lava-left2.png")})`,
+                            );
                         }
                     } catch (e) {}
-                }
+                },
             },
             {
-                selector: '#editor',
+                selector: "#editor",
                 callback: (elm) => {
-                    const aceChromeClass = 'ace-chrome';
-                    const aceMonokaiClass = 'ace-monokai';
-                    const hadChromeClass = elm.classList.contains(aceChromeClass);
-                    const hadMonokaiClass = elm.classList.contains(aceMonokaiClass);
+                    const aceChromeClass = "ace-chrome";
+                    const aceMonokaiClass = "ace-monokai";
+                    const hadChromeClass =
+                        elm.classList.contains(aceChromeClass);
+                    const hadMonokaiClass =
+                        elm.classList.contains(aceMonokaiClass);
 
                     const applyAceTheme = () => {
                         if (!themeEnabled) return;
@@ -229,17 +277,22 @@
 
                     applyAceTheme();
                     const observer = new MutationObserver(applyAceTheme);
-                    observer.observe(elm, { attributes: true, attributeFilter: ['class'] });
+                    observer.observe(elm, {
+                        attributes: true,
+                        attributeFilter: ["class"],
+                    });
                     addCleanup(() => {
                         try {
                             observer.disconnect();
-                            if (hadChromeClass) elm.classList.add(aceChromeClass);
+                            if (hadChromeClass)
+                                elm.classList.add(aceChromeClass);
                             else elm.classList.remove(aceChromeClass);
-                            if (!hadMonokaiClass) elm.classList.remove(aceMonokaiClass);
+                            if (!hadMonokaiClass)
+                                elm.classList.remove(aceMonokaiClass);
                         } catch (e) {}
                     });
-                }
-            }
+                },
+            },
         ];
 
         createGlobalObserver(themeTasks);
@@ -264,7 +317,7 @@
         }
     };
 
-    storageGet({ [STORAGE_KEY_ENABLED]: true })
+    storageGet({[STORAGE_KEY_ENABLED]: true})
         .then((items) => {
             setThemeEnabled(items[STORAGE_KEY_ENABLED] !== false);
         })
@@ -273,10 +326,21 @@
         });
 
     const storageArea = window.CFDarkThemeUtils.getStorageArea();
-    if (storageArea && storageArea.onChanged && storageArea.onChanged.addListener) {
+    if (
+        storageArea &&
+        storageArea.onChanged &&
+        storageArea.onChanged.addListener
+    ) {
         storageArea.onChanged.addListener((changes) => {
-            if (changes && Object.prototype.hasOwnProperty.call(changes, STORAGE_KEY_ENABLED)) {
-                const nextEnabled = changes[STORAGE_KEY_ENABLED].newValue !== false;
+            if (
+                changes &&
+                Object.prototype.hasOwnProperty.call(
+                    changes,
+                    STORAGE_KEY_ENABLED,
+                )
+            ) {
+                const nextEnabled =
+                    changes[STORAGE_KEY_ENABLED].newValue !== false;
                 setThemeEnabled(nextEnabled);
             }
         });

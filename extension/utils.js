@@ -1,11 +1,19 @@
 (() => {
-    'use strict';
+    "use strict";
 
     const getRuntimeURL = (path) => {
         try {
-            if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.getURL)
+            if (
+                typeof chrome !== "undefined" &&
+                chrome.runtime &&
+                chrome.runtime.getURL
+            )
                 return chrome.runtime.getURL(path);
-            if (typeof browser !== 'undefined' && browser.runtime && browser.runtime.getURL)
+            if (
+                typeof browser !== "undefined" &&
+                browser.runtime &&
+                browser.runtime.getURL
+            )
                 return browser.runtime.getURL(path);
         } catch (e) {}
         return path;
@@ -13,9 +21,17 @@
 
     const getStorageArea = () => {
         try {
-            if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local)
+            if (
+                typeof chrome !== "undefined" &&
+                chrome.storage &&
+                chrome.storage.local
+            )
                 return chrome.storage.local;
-            if (typeof browser !== 'undefined' && browser.storage && browser.storage.local)
+            if (
+                typeof browser !== "undefined" &&
+                browser.storage &&
+                browser.storage.local
+            )
                 return browser.storage.local;
         } catch (e) {}
         return null;
@@ -27,7 +43,7 @@
 
         try {
             const result = area.get(defaults);
-            if (result && typeof result.then === 'function') return result;
+            if (result && typeof result.then === "function") return result;
         } catch (e) {}
 
         return new Promise((resolve) => {
@@ -41,7 +57,7 @@
 
         try {
             const result = area.set(items);
-            if (result && typeof result.then === 'function') return result;
+            if (result && typeof result.then === "function") return result;
         } catch (e) {}
 
         return new Promise((resolve) => {
