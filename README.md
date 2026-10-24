@@ -6,7 +6,7 @@
 
 - [Overview](#overview)
 - [Screenshot](#screenshot)
-- [Quick install](#quick-install-developer-mode)
+- [Quick install](#quick-install)
     - [Firefox](#firefox)
     - [Microsoft Edge](#microsoft-edge)
     - [Chrome / Edge / Brave](#chrome--brave)
@@ -30,6 +30,7 @@ This is the extension version of Codeforces Dark Theme. If you want the userscri
 ![screenshot](assets/screenshot.png)
 
 ## Quick install
+## Quick install
 
 ### Firefox
 
@@ -38,22 +39,19 @@ Available on addon store :)
 Click Here 👉
 [![Firefox](https://img.shields.io/badge/Firefox-Install-FF7139?logo=firefox&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/codeforces-dark-theme/)
 
+### Chrome / Brave/ Chromium-based browsers
+
+Available on Chrome Web Store
+
+Click Here 👉
+[![Chrome](https://img.shields.io/badge/Chrome-Install-4285F4?logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/codeforces-dark-theme/alddkoopcdfplnigigfbgicjndhmdppn)
+
 ### Microsoft Edge
 
 Available on Microsoft Edge Add-ons
 
 Click Here 👉
 [![Edge](https://img.shields.io/badge/Edge-Install-0078D7?logo=microsoft-edge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/codeforces-dark-theme/ahjnagbaenbiokkmamnjblanbejepfnh)
-
-### Chrome / Brave
-
-1. Download `codeforces-darktheme-extension.zip` from releases:  
-   [Releases](https://github.com/gaurav7902/codeforces-darktheme/releases/tag/v1.0.3-3e01840) or directly: [Zip download](https://github.com/gaurav7902/codeforces-darktheme/releases/download/v1.0.0/codeforces-darktheme-extension.zip)
-2. Unzip the file to a local folder.
-3. Open your Chromium-based browser (Chrome, Edge, Brave) and go to `chrome://extensions/`, or `edge://extensions/`, or `brave://extensions/` as appropriate.
-4. Enable "Developer mode" (top right).
-5. Click "Load unpacked" and select `manifest.json` from the unzipped folder.
-6. Open https://codeforces.com, toggle the extension, and confirm the dark theme is applied.
 
 ## Sources and licenses
 
