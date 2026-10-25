@@ -2,36 +2,18 @@
 
 ![Tile](assets/promo-tile.svg)
 
-### Quick Navigation
+## Features
 
-- [Overview](#overview)
-- [Screenshot](#screenshot)
-- [Quick install](#quick-install)
-    - [Firefox](#firefox)
-    - [Microsoft Edge](#microsoft-edge)
-    - [Chrome / Edge / Brave](#chrome--brave)
-- [Sources and licenses](#sources-and-licenses)
-- [Contributing](#contributing)
-- [Notes](#notes)
-- [Packaging](#packaging)
-- [Store listing copy](#store-listing-copy)
-- [Privacy](#privacy)
-- [Authors](#authors)
-- [License](#license)
+- **Dark theme**: Applies a dark, high-contrast reading and coding experience to Codeforces.
 
-## Overview
+## Installation
 
-This repository provides a dark theme for Codeforces packaged as a small browser extension. All runtime assets used by the extension are bundled locally in the `extension/` folders. It provides a high-contrast reading and coding experience, incorporating bundled syntax highlighting for both the Ace editor and Prettify.js.
+### Chrome / Edge / Brave / Chromium-based browsers
 
-This is the extension version of Codeforces Dark Theme. If you want the userscript version, see the original project: https://github.com/GaurangTandon/codeforces-darktheme
+Available on Chrome Web Store
 
-## Screenshot
-
-![screenshot](assets/screenshot.png)
-
-## Quick install
-
-## Quick install
+Click Here 👉
+[![Chrome](https://img.shields.io/badge/Chrome-Install-4285F4?logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/codeforces-dark-theme/alddkoopcdfplnigigfbgicjndhmdppn)
 
 ### Firefox
 
@@ -40,19 +22,16 @@ Available on addon store :)
 Click Here 👉
 [![Firefox](https://img.shields.io/badge/Firefox-Install-FF7139?logo=firefox&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/codeforces-dark-theme/)
 
-### Chrome / Brave/ Chromium-based browsers
-
-Available on Chrome Web Store
-
-Click Here 👉
-[![Chrome](https://img.shields.io/badge/Chrome-Install-4285F4?logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/codeforces-dark-theme/alddkoopcdfplnigigfbgicjndhmdppn)
-
 ### Microsoft Edge
 
 Available on Microsoft Edge Add-ons
 
 Click Here 👉
 [![Edge](https://img.shields.io/badge/Edge-Install-0078D7?logo=microsoft-edge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/codeforces-dark-theme/ahjnagbaenbiokkmamnjblanbejepfnh)
+
+## Screenshot
+
+![screenshot](assets/screenshot.png)
 
 ## Sources and licenses
 
